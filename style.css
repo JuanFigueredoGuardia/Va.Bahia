@@ -1,0 +1,213 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .nav-link {
+    position: relative;
+    color: white !important;
+}
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Secciones */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Fondos alternados */
+.purple-bg {
+    background-color: #8000ff;
+    color: white;
+}
+.white-bg {
+    background-color: #ffffff;
+    color: #12001f;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover no-repeat;
+}
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hero .btn {
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.hero .btn:hover {
+    background-color: white;
+    color: #bb86fc;
+}
+
+/* Tarjetas */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.white-bg .card {
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0,0,0,0.2);
+}
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #bb86fc;
+}
+
+/* Botones de tarjetas */
+.card .btn {
+    margin-top: 10px;
+}
+
+/* Botones de redes sociales */
+.btn-outline-light {
+    border-color: white !important;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+.btn-outline-light:hover {
+    background-color: white !important;
+    color: #bb86fc !important;
+}
+.btn-outline-primary {
+    border-color: #bb86fc !important;
+    color: #bb86fc !important;
+}
+.btn-outline-primary:hover {
+    background-color: #bb86fc !important;
+    color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        margin: 10px auto;
+    }
+}
+
+/* Tarjetas elegantes de docentes */
+#docentes .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#docentes .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(128, 0, 255, 0.2);
+}
+
+/* Imagen de docente */
+#docentes img {
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#docentes .card:hover img {
+    transform: scale(1.05);
+}
+
+/* Título y subtítulo */
+#docentes .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8000ff; /* violeta */
+}
+
+#docentes .card-text.text-muted {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* Botón "Conocer más" */
+#docentes .btn-outline-primary {
+    border-color: #8000ff !important;
+    color: #8000ff !important;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#docentes .btn-outline-primary:hover {
+    background-color: #8000ff !important;
+    color: white !important;
+}
+
+/* Descripción animada */
+#docentes .descripcion {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #444;
+    background: rgba(128, 0, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

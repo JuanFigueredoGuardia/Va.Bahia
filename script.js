@@ -1,73 +1,52 @@
-// Menú hamburguesa
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', function() {
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('activo');
-});
-
-// Cerrar menú al seleccionar sección
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('activo');
+    /* =========================
+       📌 DESPLAZAMIENTO SUAVE
+    ========================== */
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+        enlace.addEventListener('click', function(e) {
+            e.preventDefault();
+            const destino = document.querySelector(this.getAttribute('href'));
+            if (destino) {
+                destino.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
 
-// Carrito con modal
-let carrito = [];
-let contador = document.getElementById('contador');
-let modalCarrito = document.getElementById('modal-carrito');
-let listaCarrito = document.getElementById('lista-carrito');
-let totalCarrito = document.getElementById('total-carrito');
+    /* =========================
+       📌 BOTÓN "CONOCER MÁS" EN DOCENTES
+    ========================== */
+    document.querySelectorAll('.conocer-mas').forEach(boton => {
+        boton.addEventListener('click', function() {
+            const descripcion = this.parentElement.querySelector('.descripcion');
 
-// Abrir modal
-document.getElementById('carrito-btn').addEventListener('click', () => {
-    mostrarCarrito();
-    modalCarrito.style.display = 'block';
-});
-
-// Cerrar modal
-document.getElementById('cerrar-carrito').addEventListener('click', () => {
-    modalCarrito.style.display = 'none';
-});
-
-// Agregar producto
-function agregarAlCarrito(producto, precio) {
-    carrito.push({ producto, precio });
-    contador.textContent = carrito.length;
-}
-
-// Mostrar carrito
-function mostrarCarrito() {
-    listaCarrito.innerHTML = '';
-    let total = 0;
-    carrito.forEach((item, index) => {
-        total += item.precio;
-        let li = document.createElement('li');
-        li.innerHTML = `${item.producto} - $${item.precio} <span class="eliminar" onclick="eliminarDelCarrito(${index})">❌</span>`;
-        listaCarrito.appendChild(li);
+            if (descripcion.classList.contains('d-none')) {
+                // Mostrar texto desde data-text
+                descripcion.textContent = this.getAttribute('data-text');
+                descripcion.classList.remove('d-none');
+                this.textContent = "Mostrar menos";
+            } else {
+                // Ocultar texto
+                descripcion.classList.add('d-none');
+                this.textContent = "Conocer más";
+            }
+        });
     });
-    totalCarrito.textContent = total;
-}
 
-// Eliminar producto
-function eliminarDelCarrito(index) {
-    carrito.splice(index, 1);
-    contador.textContent = carrito.length;
-    mostrarCarrito();
-}
+    /* =========================
+       📌 CERRAR MENÚ EN MÓVIL AL HACER CLIC
+    ========================== */
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
 
-// Finalizar compra por WhatsApp
-document.getElementById('finalizar-compra').addEventListener('click', () => {
-    if (carrito.length === 0) {
-        alert("Tu carrito está vacío");
-        return;
-    }
-    let mensaje = "Hola, quiero comprar:\n";
-    carrito.forEach(item => {
-        mensaje += `- ${item.producto} ($${item.precio})\n`;
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).toggle();
+            }
+        });
     });
-    let url = `//wa.me/5493454945349?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
+
 });

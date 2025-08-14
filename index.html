@@ -3,123 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaBahia - Tienda Online</title>
-
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Club de Robótica, Ciencias y Tecnología</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <link rel="icon" type="image/png" href="imagenes/IMG-20250812-WA0006 - VA BAHIA.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Encabezado -->
-    <header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark purple-bg">
+  <div class="container">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#presenciales">Presenciales</a></li>
+        <li class="nav-item"><a class="nav-link" href="#virtuales">Virtuales</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#docentes">Docentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#propuestas">Propuestas</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-        <!-- Botón hamburguesa -->
-        <div class="menu-toggle" id="menu-toggle"><i class="bi bi-list"></i></div>
+<!-- Inicio -->
+<section id="inicio" class="hero purple-bg text-white text-center d-flex align-items-center">
+  <div class="container">
+    <h1>Bienvenido a Club de Robotica, Ciencias y Tecnologia</h1>
+    <p>Formación de calidad para tu crecimiento profesional</p>
+    <a href="#presenciales" class="btn btn-outline-light btn-lg"><i class="bi bi-book"></i> Ver Cursos</a>
+  </div>
+</section>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#productos" class="nav-link">Productos</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-        </nav>
-
-        <!-- Carrito -->
-        <div class="carrito-icono" id="carrito-btn">
-            <i class="bi bi-cart"></i> <span id="contador">0</span>
+<!-- Cursos Presenciales -->
+<section id="presenciales" class="white-bg py-5">
+  <div class="container text-center">
+    <h2>Cursos Presenciales</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <div class="card p-3">
+          <h5>Desarrollo Web</h5>
+          <p>Aprende con clases presenciales y prácticas.</p>
+          <a href="#" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Contactar</a>
         </div>
-    </header>
-
-    <!-- Inicio -->
-    <section id="inicio" class="section">
-        <h1>Bienvenidos a VaBahia</h1>
-        <p>Tu Destino para Vapers, Líquidos y Accesorios.
-        Explora un mundo de sabores y encuentra todo lo que necesitas para una experiencia de vapeo única. Hacemos que comprar sea rápido y sencillo.</p>
-    </section>
-
-    <!-- Productos -->
-    <section id="productos" class="section">
-        <h2>Nuestros Productos</h2>
-        <div class="productos-grid">
-            <div class="producto">
-                <img src="imagenes/530865070_1714812389183404_8272724936791635294_n.jpg" alt="Vaper 1">
-                <h3>Vaper Clásico</h3>
-                <p class="precio">$25.000</p>
-                <button onclick="agregarAlCarrito('Vaper Clásico', 25000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/528598173_2521674814860279_5136156234395995988_n.jpg" alt="Vaper 2">
-                <h3>Vaper Premium</h3>
-                <p class="precio">$40.000</p>
-                <button onclick="agregarAlCarrito('Vaper Premium', 40000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/528052183_1505315290460076_2134188027843394288_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/528311493_590208647357179_5738887526259479311_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                   <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/531559852_1765126584090700_7792847131744764880_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                   <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card p-3">
+          <h5>Marketing Digital</h5>
+          <p>Domina estrategias digitales con expertos.</p>
+          <a href="#" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Contactar</a>
         </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="section">
-        <h2>Contáctanos</h2>
-        <div class="redes-contacto">
-            <a href="https://wa.me/5492914461862" target="_blank" class="btn-red whatsapp">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://www.instagram.com/va.bahia?igsh=MWVlbTZ1OXA1M3kzaQ==" target="_blank" class="btn-red instagram">
-                <i class="bi bi-instagram"></i> Instagram
-            </a>
-            <a href="https://www.facebook.com/share/1FSGTnFay4/" target="_blank" class="btn-red facebook">
-                <i class="bi bi-facebook"></i> Facebook
-            </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card p-3">
+          <h5>Diseño Gráfico</h5>
+          <p>Curso práctico con proyectos reales.</p>
+          <a href="#" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Contactar</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>VaBahia - Todos los derechos reservados</p>
-    </footer>
+<!-- Cursos Virtuales -->
+<section id="virtuales" class="purple-bg text-white py-5">
+  <div class="container text-center">
+    <h2>Cursos Virtuales</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <div class="card p-3 bg-transparent border-white text-white">
+          <h5>Python</h5>
+          <p>Clases online con seguimiento personalizado.</p>
+          <a href="#" class="btn btn-outline-light"><i class="bi bi-chat-dots"></i> Mensaje Directo</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card p-3 bg-transparent border-white text-white">
+          <h5>JavaScript</h5>
+          <p>Aprende desarrollo web desde tu casa.</p>
+          <a href="#" class="btn btn-outline-light"><i class="bi bi-chat-dots"></i> Mensaje Directo</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card p-3 bg-transparent border-white text-white">
+          <h5>Excel Avanzado</h5>
+          <p>Domina herramientas de oficina online.</p>
+          <a href="#" class="btn btn-outline-light"><i class="bi bi-chat-dots"></i> Mensaje Directo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Modal del Carrito -->
-    <div class="modal" id="modal-carrito">
-        <div class="modal-contenido">
-            <span class="cerrar" id="cerrar-carrito">&times;</span>
-            <h2>Tu Carrito</h2>
-            <ul id="lista-carrito"></ul>
-            <div class="total">Total: $<span id="total-carrito">0</span></div>
-            <button id="finalizar-compra">Finalizar compra</button>
+<!-- Nosotros -->
+<section id="nosotros" class="white-bg py-5 text-center">
+  <div class="container">
+    <h2>Nosotros</h2>
+    <p>MiAcademia es líder en formación profesional con cursos presenciales y virtuales. Nuestro objetivo es impulsar tu crecimiento con educación de calidad.</p>
+  </div>
+</section>
+
+<section id="docentes" class="white-bg">
+    <div class="container">
+        <h2 class="mb-5">Nuestros Docentes</h2>
+        <div class="row g-4">
+
+            <!-- Docente 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/docente1.jpg" class="card-img-top" alt="Docente 1">
+                    <div class="card-body">
+                        <h5 class="card-title">María López</h5>
+                        <p class="card-text text-muted">Especialista en Matemáticas</p>
+                        <button class="btn btn-outline-primary conocer-mas" data-text="María López cuenta con más de diez años de experiencia enseñando matemáticas en colegios y universidades. Su enfoque dinámico y práctico ayuda a que los estudiantes comprendan conceptos complejos con facilidad y confianza.
+                        ">Conocer más</button>
+                        <p class="descripcion mt-3 d-none"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Docente 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/docente2.jpg" class="card-img-top" alt="Docente 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Pérez</h5>
+                        <p class="card-text text-muted">Experto en Física</p>
+                        <button class="btn btn-outline-primary conocer-mas" data-text="Carlos Pérez es especialista en desarrollo web y aplicaciones móviles. Ha trabajado en proyectos internacionales y su pasión por la tecnología inspira a sus alumnos a crear soluciones innovadoras y útiles.
+                        ">Conocer más</button>
+                        <p class="descripcion mt-3 d-none"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Docente 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="img/docente3.jpg" class="card-img-top" alt="Docente 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Laura Martínez</h5>
+                        <p class="card-text text-muted">Licenciada en Literatura</p>
+                        <button class="btn btn-outline-primary conocer-mas" data-text="Ana Torres domina el diseño gráfico y la comunicación visual. Sus clases combinan creatividad y técnica, ayudando a los estudiantes a desarrollar un estilo propio y adaptado a las tendencias actuales.
+                        ">Conocer más</button>
+                        <p class="descripcion mt-3 d-none"></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</section>
 
-    <script src="script.js"></script>
+<section id="propuestas" class="purple-bg text-white py-5 text-center">
+  <div class="container">
+    <h2>Nuestras Propuestas</h2>
+    <p>Ofrecemos planes adaptados a tus necesidades, desde formación básica hasta programas especializados avanzados.</p>
+    <div class="mt-3">
+      <a href="#" class="btn btn-outline-light me-2"><i class="bi bi-facebook"></i> Facebook</a>
+      <a href="#" class="btn btn-outline-light me-2"><i class="bi bi-instagram"></i> Instagram</a>
+      <a href="#" class="btn btn-outline-light"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="purple-bg text-white text-center py-3">
+  <p>© 2025 MiAcademia - Todos los derechos reservados</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
