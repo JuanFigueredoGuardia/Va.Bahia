@@ -1,61 +1,56 @@
-// Menú hamburguesa
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('activo');
-});
-
-// Cerrar menú al seleccionar sección
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('activo');
-    });
-});
-
-// Carrito con modal
 let carrito = [];
 let contador = document.getElementById('contador');
-let modalCarrito = document.getElementById('modal-carrito');
+let contadorLg = document.getElementById('contador-lg');
 let listaCarrito = document.getElementById('lista-carrito');
 let totalCarrito = document.getElementById('total-carrito');
 
-// Abrir modal
-document.getElementById('carrito-btn').addEventListener('click', () => {
+// Abrir modal del carrito
+function abrirCarrito() {
     mostrarCarrito();
-    modalCarrito.style.display = 'block';
-});
+    const modalBootstrap = new bootstrap.Modal(document.getElementById('modalCarritoBootstrap'));
+    modalBootstrap.show();
+}
 
-// Cerrar modal
-document.getElementById('cerrar-carrito').addEventListener('click', () => {
-    modalCarrito.style.display = 'none';
-});
+// Eventos de ambos botones del carrito
+document.getElementById('carrito-btn').addEventListener('click', abrirCarrito);
+document.getElementById('carrito-btn-lg').addEventListener('click', abrirCarrito);
 
 // Agregar producto
 function agregarAlCarrito(producto, precio) {
     carrito.push({ producto, precio });
-    contador.textContent = carrito.length;
+    actualizarContadores();
 }
 
-// Mostrar carrito
+// Mostrar carrito (actualiza contenido)
 function mostrarCarrito() {
     listaCarrito.innerHTML = '';
     let total = 0;
     carrito.forEach((item, index) => {
         total += item.precio;
         let li = document.createElement('li');
-        li.innerHTML = `${item.producto} - $${item.precio} <span class="eliminar" onclick="eliminarDelCarrito(${index})">❌</span>`;
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innerHTML = `
+            ${item.producto} - $${item.precio}
+            <button class="btn btn-sm btn-danger" onclick="eliminarDelCarrito(${index})">
+                <i class="bi bi-trash"></i>
+            </button>
+        `;
         listaCarrito.appendChild(li);
     });
     totalCarrito.textContent = total;
 }
 
-// Eliminar producto
+// Eliminar producto del carrito
 function eliminarDelCarrito(index) {
     carrito.splice(index, 1);
-    contador.textContent = carrito.length;
+    actualizarContadores();
     mostrarCarrito();
+}
+
+// Actualizar contadores
+function actualizarContadores() {
+    contador.textContent = carrito.length;
+    contadorLg.textContent = carrito.length;
 }
 
 // Finalizar compra por WhatsApp

@@ -5,121 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VaBahia - Tienda Online</title>
 
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="icon" type="image/png" href="imagenes/IMG-20250812-WA0006 - VA BAHIA.jpg">
 </head>
 <body>
 
-    <!-- Encabezado -->
-    <header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
 
-        <!-- Botón hamburguesa -->
-        <div class="menu-toggle" id="menu-toggle"><i class="bi bi-list"></i></div>
+        <!-- Carrito visible en móvil -->
+        <button class="btn btn-outline-light position-relative d-lg-none me-2" id="carrito-btn">
+            <i class="bi bi-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="contador">0</span>
+        </button>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#productos" class="nav-link">Productos</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-center">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
             </ul>
-        </nav>
-
-        <!-- Carrito -->
-        <div class="carrito-icono" id="carrito-btn">
-            <i class="bi bi-cart"></i> <span id="contador">0</span>
-        </div>
-    </header>
-
-    <!-- Inicio -->
-    <section id="inicio" class="section">
-        <h1>Bienvenidos a VaBahia</h1>
-        <p>Tu Destino para Vapers, Líquidos y Accesorios.
-        Explora un mundo de sabores y encuentra todo lo que necesitas para una experiencia de vapeo única. Hacemos que comprar sea rápido y sencillo.</p>
-    </section>
-
-    <!-- Productos -->
-    <section id="productos" class="section">
-        <h2>Nuestros Productos</h2>
-        <div class="productos-grid">
-            <div class="producto">
-                <img src="imagenes/530865070_1714812389183404_8272724936791635294_n.jpg" alt="Vaper 1">
-                <h3>Vaper Clásico</h3>
-                <p class="precio">$25.000</p>
-                <button onclick="agregarAlCarrito('Vaper Clásico', 25000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
+            <!-- Carrito en escritorio -->
+            <div class="ms-lg-3 mt-3 mt-lg-0 text-center d-none d-lg-block">
+                <button class="btn btn-outline-light position-relative" id="carrito-btn-lg">
+                    <i class="bi bi-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="contador-lg">0</span>
                 </button>
             </div>
-            <div class="producto">
-                <img src="imagenes/528598173_2521674814860279_5136156234395995988_n.jpg" alt="Vaper 2">
-                <h3>Vaper Premium</h3>
-                <p class="precio">$40.000</p>
-                <button onclick="agregarAlCarrito('Vaper Premium', 40000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/528052183_1505315290460076_2134188027843394288_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                    <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/528311493_590208647357179_5738887526259479311_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                   <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="imagenes/531559852_1765126584090700_7792847131744764880_n.jpg" alt="Vaper 3">
-                <h3>Vaper de Lujo</h3>
-                <p class="precio">$60.000</p>
-                <button onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
-                   <i class="bi bi-cart-plus"></i> Agregar al carrito
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="section">
-        <h2>Contáctanos</h2>
-        <div class="redes-contacto">
-            <a href="https://wa.me/5492914461862" target="_blank" class="btn-red whatsapp">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://www.instagram.com/va.bahia?igsh=MWVlbTZ1OXA1M3kzaQ==" target="_blank" class="btn-red instagram">
-                <i class="bi bi-instagram"></i> Instagram
-            </a>
-            <a href="https://www.facebook.com/share/1FSGTnFay4/" target="_blank" class="btn-red facebook">
-                <i class="bi bi-facebook"></i> Facebook
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <p>VaBahia - Todos los derechos reservados</p>
-    </footer>
-
-    <!-- Modal del Carrito -->
-    <div class="modal" id="modal-carrito">
-        <div class="modal-contenido">
-            <span class="cerrar" id="cerrar-carrito">&times;</span>
-            <h2>Tu Carrito</h2>
-            <ul id="lista-carrito"></ul>
-            <div class="total">Total: $<span id="total-carrito">0</span></div>
-            <button id="finalizar-compra">Finalizar compra</button>
         </div>
     </div>
+</nav>
 
-    <script src="script.js"></script>
+<!-- Inicio -->
+<section id="inicio" class="section fade-in text-center">
+    <h1>Bienvenidos a VaBahia</h1>
+    <p>Tu Destino para Vapers, Líquidos y Accesorios.
+    Explora un mundo de sabores y encuentra todo lo que necesitas para una experiencia de vapeo única. Hacemos que comprar sea rápido y sencillo.</p>
+</section>
+
+<!-- Productos -->
+<section id="productos" class="section">
+    <h2 class="mb-4 fw-bold text-center">Nuestros Productos</h2>
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow h-100 text-center">
+                    <img src="imagenes/530865070_1714812389183404_8272724936791635294_n.jpg" class="producto-img" alt="Vaper Clásico">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaper Clásico</h5>
+                        <p class="precio">$25.000</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('Vaper Clásico', 25000)">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow h-100 text-center">
+                    <img src="imagenes/528598173_2521674814860279_5136156234395995988_n.jpg" class="producto-img" alt="Vaper Premium">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaper Premium</h5>
+                        <p class="precio">$40.000</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('Vaper Premium', 40000)">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow h-100 text-center">
+                    <img src="imagenes/528052183_1505315290460076_2134188027843394288_n.jpg" class="producto-img" alt="Vaper de Lujo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaper de Lujo</h5>
+                        <p class="precio">$60.000</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow h-100 text-center">
+                    <img src="imagenes/528311493_590208647357179_5738887526259479311_n.jpg" class="producto-img" alt="Vaper de Lujo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaper de Lujo</h5>
+                        <p class="precio">$60.000</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow h-100 text-center">
+                    <img src="imagenes/531559852_1765126584090700_7792847131744764880_n.jpg" class="producto-img" alt="Vaper de Lujo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaper de Lujo</h5>
+                        <p class="precio">$60.000</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('Vaper de Lujo', 60000)">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="section text-center">
+    <h2>Contáctanos</h2>
+    <div class="redes-contacto">
+        <a href="https://wa.me/5492914461862" target="_blank" class="btn-red whatsapp">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://www.instagram.com/va.bahia?igsh=MWVlbTZ1OXA1M3kzaQ==" target="_blank" class="btn-red instagram">
+            <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1FSGTnFay4/" target="_blank" class="btn-red facebook">
+            <i class="bi bi-facebook"></i> Facebook
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>VaBahia - Todos los derechos reservados</p>
+</footer>
+
+<!-- Modal Carrito Bootstrap -->
+<div class="modal fade" id="modalCarritoBootstrap" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="modalCarritoLabel">
+                    <i class="bi bi-cart"></i> Tu Carrito
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+
+            <div class="modal-body">
+                <ul id="lista-carrito" class="list-group mb-3"></ul>
+                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                    <span class="fw-bold fs-5">Total:</span>
+                    <span class="fw-bold fs-5 text-success">$<span id="total-carrito">0</span></span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" id="finalizar-compra" class="btn btn-success">
+                    <i class="bi bi-whatsapp"></i> Finalizar compra
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS + Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
