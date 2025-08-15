@@ -1,6 +1,5 @@
 let carrito = [];
 let contador = document.getElementById('contador');
-let contadorLg = document.getElementById('contador-lg');
 let listaCarrito = document.getElementById('lista-carrito');
 let totalCarrito = document.getElementById('total-carrito');
 
@@ -11,9 +10,8 @@ function abrirCarrito() {
     modalBootstrap.show();
 }
 
-// Eventos de ambos botones del carrito
+// Evento para el botón del carrito
 document.getElementById('carrito-btn').addEventListener('click', abrirCarrito);
-document.getElementById('carrito-btn-lg').addEventListener('click', abrirCarrito);
 
 // Agregar producto
 function agregarAlCarrito(producto, precio) {
@@ -50,7 +48,6 @@ function eliminarDelCarrito(index) {
 // Actualizar contadores
 function actualizarContadores() {
     contador.textContent = carrito.length;
-    contadorLg.textContent = carrito.length;
 }
 
 // Finalizar compra por WhatsApp
@@ -65,4 +62,60 @@ document.getElementById('finalizar-compra').addEventListener('click', () => {
     });
     let url = `//wa.me/5493454945349?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
+});
+
+// Lógica de búsqueda
+const searchForm = document.getElementById('form-buscador');
+const searchInput = document.getElementById('input-buscador');
+const searchBtn = searchForm.querySelector('.btn');
+const productosDisponibles = document.querySelectorAll('.producto-item');
+const mensajeBusqueda = document.getElementById('mensaje-busqueda');
+
+// Toggle del buscador
+searchBtn.addEventListener('click', (event) => {
+    // Si la pantalla es grande, el input se oculta o se muestra
+    if (window.innerWidth >= 992) {
+        event.preventDefault(); // Evita que el formulario se envíe
+        searchForm.classList.toggle('search-active');
+        if (searchForm.classList.contains('search-active')) {
+            searchInput.focus();
+        } else {
+            searchInput.value = '';
+            buscarProductos(''); // Limpia los resultados si se cierra el buscador
+        }
+    }
+});
+
+searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const termino = searchInput.value;
+    buscarProductos(termino);
+});
+
+function buscarProductos(termino) {
+    const terminoBusqueda = termino.trim().toLowerCase();
+    let encontrado = false;
+
+    productosDisponibles.forEach(producto => {
+        const titulo = producto.querySelector('.card-title').textContent.toLowerCase();
+        if (titulo.includes(terminoBusqueda)) {
+            producto.classList.remove('oculto');
+            encontrado = true;
+        } else {
+            producto.classList.add('oculto');
+        }
+    });
+
+    if (encontrado || terminoBusqueda === '') {
+        mensajeBusqueda.classList.add('d-none');
+    } else {
+        mensajeBusqueda.classList.remove('d-none');
+    }
+}
+
+// Para limpiar la búsqueda al borrar el texto
+searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Backspace' && e.target.value === '') {
+        buscarProductos('');
+    }
 });

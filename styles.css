@@ -107,9 +107,68 @@ footer {
     margin-top: 20px;
 }
 
-/* Ícono del carrito más grande en móviles */
-@media (max-width: 768px) {
-    #carrito-btn i {
-        font-size: 1.5rem;
+/* Estilos para el efecto de la flecha y brillo en los enlaces del menú */
+.nav-link {
+    position: relative;
+    padding-right: 1.2em !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    color: white;
+}
+
+.nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Estilos de la barra de búsqueda expandible */
+.search-input {
+    width: 0;
+    visibility: hidden;
+    transition: width 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.search-active .search-input {
+    width: 150px;
+    visibility: visible;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 991.98px) {
+    /* El input de búsqueda siempre está visible en pantallas pequeñas */
+    .search-input {
+        width: 100px !important;
+        visibility: visible !important;
     }
+    
+    /* El ícono de carrito se ajusta para que se vea bien en móvil */
+    .ms-auto {
+        margin-left: 10px !important;
+    }
+    
+    /* Alinea las opciones de navegación a la izquierda */
+    .navbar-nav {
+        margin-right: auto;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Estilos de los productos para la búsqueda */
+.producto-item.oculto {
+    display: none;
 }
