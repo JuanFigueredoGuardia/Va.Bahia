@@ -129,10 +129,16 @@
     </div>
 </section>
 
+<!-- Mensaje búsqueda -->
 <div id="mensaje-busqueda" class="container mt-4 text-center d-none">
     <div class="alert alert-warning" role="alert">
         Producto no encontrado
     </div>
+</div>
+
+<!-- Botón ver todos -->
+<div class="container text-center mt-2 d-none" id="contenedor-ver-todos">
+    <button class="btn btn-dark" id="btn-ver-todos">Ver todos los productos</button>
 </div>
 
 <section id="contacto" class="section text-center">
@@ -154,6 +160,7 @@
     <p>VaBahia - Todos los derechos reservados</p>
 </footer>
 
+<!-- Modal Carrito -->
 <div class="modal fade" id="modalCarritoBootstrap" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -167,10 +174,23 @@
 
             <div class="modal-body">
                 <ul id="lista-carrito" class="list-group mb-3"></ul>
-                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-3">
                     <span class="fw-bold fs-5">Total:</span>
                     <span class="fw-bold fs-5 text-success">$<span id="total-carrito">0</span></span>
                 </div>
+
+                <!-- Formulario cliente -->
+                <form id="form-datos">
+                    <div class="mb-2">
+                        <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="apellido" class="form-control" placeholder="Apellido" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="direccion" class="form-control" placeholder="Dirección" required>
+                    </div>
+                </form>
             </div>
 
             <div class="modal-footer">

@@ -149,18 +149,13 @@ footer {
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 991.98px) {
-    /* El input de búsqueda siempre está visible en pantallas pequeñas */
     .search-input {
         width: 100px !important;
         visibility: visible !important;
     }
-    
-    /* El ícono de carrito se ajusta para que se vea bien en móvil */
     .ms-auto {
         margin-left: 10px !important;
     }
-    
-    /* Alinea las opciones de navegación a la izquierda */
     .navbar-nav {
         margin-right: auto;
         width: 100%;
@@ -171,4 +166,11 @@ footer {
 /* Estilos de los productos para la búsqueda */
 .producto-item.oculto {
     display: none;
+}
+
+/* Estilo para formulario en carrito */
+#form-datos input {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 8px;
 }
