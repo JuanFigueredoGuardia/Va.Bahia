@@ -79,10 +79,10 @@ document.getElementById('finalizar-compra').addEventListener('click', () => {
 const searchForm = document.getElementById('form-buscador');
 const searchInput = document.getElementById('input-buscador');
 const searchBtn = searchForm.querySelector('.btn');
-const productosDisponibles = document.querySelectorAll('.producto-item');
 const mensajeBusqueda = document.getElementById('mensaje-busqueda');
 const contenedorVerTodos = document.getElementById('contenedor-ver-todos');
 
+// Botón de la lupa en escritorio
 searchBtn.addEventListener('click', (event) => {
     if (window.innerWidth >= 992) {
         event.preventDefault();
@@ -96,6 +96,7 @@ searchBtn.addEventListener('click', (event) => {
     }
 });
 
+// Formulario de búsqueda
 searchForm.addEventListener('submit', function(event) {
     event.preventDefault();
     const termino = searchInput.value;
@@ -105,6 +106,9 @@ searchForm.addEventListener('submit', function(event) {
 function buscarProductos(termino) {
     const terminoBusqueda = termino.trim().toLowerCase();
     let encontrado = false;
+
+    // 🔥 Siempre refrescar lista de productos disponibles
+    const productosDisponibles = document.querySelectorAll('.producto-item');
 
     productosDisponibles.forEach(producto => {
         const titulo = producto.querySelector('.card-title').textContent.toLowerCase();
