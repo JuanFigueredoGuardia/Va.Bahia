@@ -10,7 +10,7 @@ const productos = [
     ["Elfbar Nic King (40.000 puff)", 27000, "imagenes/Elfbar Nic King.jpg", "descartables"],
     ["Nikbar ice baby (40.000 puff)", 27000, "imagenes/Nikbar ice baby.jpg", "descartables"],
     ["Ignite Ice (40.000 puff)", 29000, "imagenes/Ignite Ice.jpg", "descartables"],
-    ["Ignite (25.000 puff", 25000, "imagenes/Ignite .jpg", "descartables"],
+    ["Ignite (25.000 puff)", 25000, "imagenes/Ignite .jpg", "descartables"],
     ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
     ["Vozol Vista (20.000 puff)", 20000, "imagenes/Vozol Vista.jpg", "descartables"],
     ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
@@ -22,6 +22,9 @@ const productos = [
     ["Calibarn (6.000 puff)", 15000, "imagenes/Calibarn.jpg", "descartables"],
     ["HDQ ( 5.000 puff)", 14000, "imagenes/HDQ.jpg", "descartables"],
     ["Zomo Party (4.500 puff)", 13000, "imagenes/Zomo Party.jpg", "descartables"],
+    ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "descartables"],
+    ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "descartables"],
+    ["Phenom Mushroom 6gr", 60000, "imagenes/Phenom Mushroom 6gr.jpg", "descartables"],
 
     // Equipos
     ["Pod recargable zomo play", 18000, "imagenes/Pod recargable zomo play.jpg", "equipos"],
@@ -32,9 +35,6 @@ const productos = [
     // Líquidos
     ["Líquidos Punisher 60ml", 13500, "imagenes/Líquidos Punisher 60ml.jpg", "liquidos"],
     ["Sales Punisher 30ml", 13500, "imagenes/Sales Punisher 30ml.jpg", "liquidos"],
-    ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "liquidos"],
-    ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "liquidos"],
-    ["Phenom Mushroom 6gr", 60000, "imagenes/Phenom Mushroom 6gr.jpg", "liquidos"],
 
     // Accesorios
     ["Cartuchos Zomo", 10000, "imagenes/Cartuchos Zomo.jpg", "accesorios"],
