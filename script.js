@@ -20,7 +20,7 @@ const productos = [
     ["Chris Brown (15.000 puff)", 19000, "imagenes/Chris Brown.jpg", "descartables"],
     ["Pone Pod (8.500 puff)", 17000, "imagenes/Pone Pod.jpg", "descartables"],
     ["Calibarn (6.000 puff)", 15000, "imagenes/Calibarn.jpg", "descartables"],
-    ["HDQ ( 5.000 puff)", 14000, "imagenes/HDQ.jpg", "descartables"],
+    ["HDQ (5.000 puff)", 14000, "imagenes/HDQ.jpg", "descartables"],
     ["Zomo Party (4.500 puff)", 13000, "imagenes/Zomo Party.jpg", "descartables"],
     ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "descartables"],
     ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "descartables"],
@@ -221,3 +221,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
