@@ -3,13 +3,53 @@ let contador = document.getElementById('contador');
 let listaCarrito = document.getElementById('lista-carrito');
 let totalCarrito = document.getElementById('total-carrito');
 
+// Define las categorías de tus productos
+const productos = [
+    // Descartables
+    ["Elfbar Ice King (40.000 puff)", 27000, "imagenes/Elfbar Ice King.jpg", "descartables"],
+    ["Elfbar Nic King (40.000 puff)", 27000, "imagenes/Elfbar Nic King.jpg", "descartables"],
+    ["Nikbar ice baby (40.000 puff)", 27000, "imagenes/Nikbar ice baby.jpg", "descartables"],
+    ["Ignite Ice (40.000 puff)", 29000, "imagenes/Ignite Ice.jpg", "descartables"],
+    ["Ignite (25.000 puff", 25000, "imagenes/Ignite .jpg", "descartables"],
+    ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
+    ["Vozol Vista (20.000 puff)", 20000, "imagenes/Vozol Vista.jpg", "descartables"],
+    ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
+    ["black Sheep Duo (20.000 puff)", 29000, "imagenes/black Sheep Duo.jpg", "descartables"],
+    ["Space Prism (20.000 puff)", 20000, "imagenes/Space Prism.jpg", "descartables"],
+    ["HDQ Tabaquil ( 25.000 puff)", 25000, "imagenes/HDQ Tabaquil.jpg", "descartables"],
+    ["Chris Brown (15.000 puff)", 19000, "imagenes/Chris Brown.jpg", "descartables"],
+    ["Pone Pod (8.500 puff)", 17000, "imagenes/Pone Pod.jpg", "descartables"],
+    ["Calibarn (6.000 puff)", 15000, "imagenes/Calibarn.jpg", "descartables"],
+    ["HDQ ( 5.000 puff)", 14000, "imagenes/HDQ.jpg", "descartables"],
+    ["Zomo Party (4.500 puff)", 13000, "imagenes/Zomo Party.jpg", "descartables"],
+
+    // Equipos
+    ["Pod recargable zomo play", 18000, "imagenes/Pod recargable zomo play.jpg", "equipos"],
+    ["Pod recargable Smok - Novo 2s", 25000, "imagenes/Pod recargable Smok - Novo 2s.jpg", "equipos"],
+    ["Kit de inicio Smok Vape Pen V2 kit", 27000, "imagenes/Kit de inicio Smok Vape Pen V2 kit.jpg", "equipos"],
+    ["Vapeador Voopoo Drag x pro kit", 66000, "imagenes/Vapeador Voopoo Drag x pro kit.jpg", "equipos"],
+
+    // Líquidos
+    ["Líquidos Punisher 60ml", 13500, "imagenes/Líquidos Punisher 60ml.jpg", "liquidos"],
+    ["Sales Punisher 30ml", 13500, "imagenes/Sales Punisher 30ml.jpg", "liquidos"],
+    ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "liquidos"],
+    ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "liquidos"],
+    ["Phenom Mushroom 6gr", 60000, "imagenes/Phenom Mushroom 6gr.jpg", "liquidos"],
+
+    // Accesorios
+    ["Cartuchos Zomo", 10000, "imagenes/Cartuchos Zomo.jpg", "accesorios"],
+    ["Cartucho Novo2", 10000, "imagenes/Cartucho Novo2.jpg", "accesorios"],
+    ["Resistencia TPP", 12000, "imagenes/Resistencia TPP.jpg", "accesorios"],
+    ["Bateria LG - 18650", 13000, "imagenes/Bateria LG - 18650.jpg", "accesorios"],
+    ["Vidrios Smok Pen", 9500, "imagenes/Vidrios Smok Pen.jpg", "accesorios"],
+];
+
 // Abrir modal del carrito
 function abrirCarrito() {
     mostrarCarrito();
     const modalBootstrap = new bootstrap.Modal(document.getElementById('modalCarritoBootstrap'));
     modalBootstrap.show();
 }
-
 document.getElementById('carrito-btn').addEventListener('click', abrirCarrito);
 
 // Agregar producto
@@ -34,7 +74,7 @@ function mostrarCarrito() {
         `;
         listaCarrito.appendChild(li);
     });
-    totalCarrito.textContent = total;
+    totalCarrito.textContent = total.toLocaleString('es-AR');
 }
 
 // Eliminar producto
@@ -55,25 +95,44 @@ document.getElementById('finalizar-compra').addEventListener('click', () => {
         alert("Tu carrito está vacío");
         return;
     }
-
     let nombre = document.getElementById('nombre').value.trim();
     let apellido = document.getElementById('apellido').value.trim();
     let direccion = document.getElementById('direccion').value.trim();
-
     if (!nombre || !apellido || !direccion) {
         alert("Por favor completa tus datos antes de finalizar la compra");
         return;
     }
-
     let mensaje = `Hola, soy ${nombre} ${apellido}.\nDirección: ${direccion}\nQuiero comprar:\n`;
     carrito.forEach(item => {
         mensaje += `- ${item.producto} ($${item.precio})\n`;
     });
     mensaje += `\nTotal: $${totalCarrito.textContent}`;
-
-    let url = `https://wa.me/5493454945349?text=${encodeURIComponent(mensaje)}`;
+    let url = `https://wa.me/5492914461862?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 });
+
+// Función para renderizar los productos en la pestaña correcta
+function renderizarProductos(categoria) {
+    const contenedor = document.getElementById(categoria).querySelector('.row');
+    contenedor.innerHTML = ''; // Limpia el contenedor antes de renderizar
+    const productosFiltrados = categoria === 'todos' ? productos : productos.filter(p => p[3] === categoria);
+    productosFiltrados.forEach(([nombre, precio, imagen]) => {
+        const card = `
+            <div class="col-md-4 col-sm-6 producto-item">
+                <div class="card shadow h-100 text-center">
+                    <img src="${imagen}" class="producto-img" alt="${nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${nombre}</h5>
+                        <p class="precio">$${precio.toLocaleString('es-AR')}</p>
+                        <button class="btn-negro w-100" onclick="agregarAlCarrito('${nombre}', ${precio})">
+                            <i class="bi bi-cart-plus"></i> Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+        contenedor.insertAdjacentHTML("beforeend", card);
+    });
+}
 
 // Búsqueda
 const searchForm = document.getElementById('form-buscador');
@@ -105,11 +164,12 @@ searchForm.addEventListener('submit', function(event) {
 
 function buscarProductos(termino) {
     const terminoBusqueda = termino.trim().toLowerCase();
+    
+    // Filtra los productos visibles en la pestaña activa
+    const pestañaActiva = document.querySelector('.tab-pane.show.active').id;
+    const productosDisponibles = document.querySelectorAll(`#${pestañaActiva} .producto-item`);
+    
     let encontrado = false;
-
-    // 🔥 Siempre refrescar lista de productos disponibles
-    const productosDisponibles = document.querySelectorAll('.producto-item');
-
     productosDisponibles.forEach(producto => {
         const titulo = producto.querySelector('.card-title').textContent.toLowerCase();
         if (titulo.includes(terminoBusqueda)) {
@@ -145,4 +205,18 @@ searchInput.addEventListener('keyup', (e) => {
     if (e.key === 'Backspace' && e.target.value === '') {
         buscarProductos('');
     }
+});
+
+// Inicializar la página
+document.addEventListener("DOMContentLoaded", () => {
+    // Renderiza la pestaña "Descartables" al cargar la página
+    renderizarProductos('descartables');
+    // Agrega listeners a los botones de las pestañas
+    const tabTriggers = document.querySelectorAll('#myTab button');
+    tabTriggers.forEach(trigger => {
+        trigger.addEventListener('shown.bs.tab', event => {
+            const categoria = event.target.id.split('-')[0];
+            renderizarProductos(categoria);
+        });
+    });
 });

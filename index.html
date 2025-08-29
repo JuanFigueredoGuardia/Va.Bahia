@@ -1,258 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VaBahia - Tienda Online</title>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-  />
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="icon"
-    type="image/png"
-    href="imagenes/IMG-20250812-WA0006 - VA BAHIA.jpg"
-  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaBahia - Vapers, Líquidos y Accesorios | Tienda Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="imagenes/vabahia-logo.png" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto text-center">
-            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-light position-relative me-2" id="carrito-btn">
+                    <i class="bi bi-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="contador">0</span>
+                </button>
+                <form class="d-flex search-form" role="search" id="form-buscador">
+                    <input class="form-control me-2 search-input" type="search" placeholder="Buscar..." aria-label="Buscar" id="input-buscador" />
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-      </div>
-
-      <div class="d-flex align-items-center">
-        <button class="btn btn-outline-light position-relative me-2" id="carrito-btn">
-          <i class="bi bi-cart"></i>
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-            id="contador"
-            >0</span
-          >
-        </button>
-        <form class="d-flex search-form" role="search" id="form-buscador">
-          <input
-            class="form-control me-2 search-input"
-            type="search"
-            placeholder="Buscar..."
-            aria-label="Buscar"
-            id="input-buscador"
-          />
-          <button class="btn btn-outline-light" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
-      </div>
+    </nav>
+    <section id="inicio" class="section fade-in text-center">
+        <h1>Bienvenidos a VaBahia</h1>
+        <p>Tu Destino para Vapers, Líquidos y Accesorios. Explora un mundo de sabores y encuentra todo lo que necesitas para una experiencia de vapeo única. Hacemos que comprar sea rápido y sencillo.</p>
+    </section>
+    <section id="productos" class="section">
+        <div class="container">
+            <h2 class="mb-4 fw-bold text-center">Nuestros Productos</h2>
+            <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="descartables-tab" data-bs-toggle="tab" data-bs-target="#descartables" type="button" role="tab">Descartables</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="equipos-tab" data-bs-toggle="tab" data-bs-target="#equipos" type="button" role="tab">Equipos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="liquidos-tab" data-bs-toggle="tab" data-bs-target="#liquidos" type="button" role="tab">Líquidos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="accesorios-tab" data-bs-toggle="tab" data-bs-target="#accesorios" type="button" role="tab">Accesorios</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos" type="button" role="tab">Todos</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="descartables" role="tabpanel" tabindex="0">
+                    <div class="row g-4 justify-content-center"></div>
+                </div>
+                <div class="tab-pane fade" id="equipos" role="tabpanel" tabindex="0">
+                    <div class="row g-4 justify-content-center"></div>
+                </div>
+                <div class="tab-pane fade" id="liquidos" role="tabpanel" tabindex="0">
+                    <div class="row g-4 justify-content-center"></div>
+                </div>
+                <div class="tab-pane fade" id="accesorios" role="tabpanel" tabindex="0">
+                    <div class="row g-4 justify-content-center"></div>
+                </div>
+                <div class="tab-pane fade" id="todos" role="tabpanel" tabindex="0">
+                    <div class="row g-4 justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="mensaje-busqueda" class="container mt-4 text-center d-none">
+        <div class="alert alert-warning" role="alert">Producto no encontrado</div>
     </div>
-  </nav>
-
-  <section id="inicio" class="section fade-in text-center">
-    <h1>Bienvenidos a VaBahia</h1>
-    <p>
-      Tu Destino para Vapers, Líquidos y Accesorios. Explora un mundo de sabores y encuentra todo lo que necesitas para una experiencia de vapeo única. Hacemos que comprar sea rápido y sencillo.
-    </p>
-  </section>
-
-  <section id="productos" class="section">
-    <h2 class="mb-4 fw-bold text-center">Nuestros Productos</h2>
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-
-        <!-- 🚨 Productos -->
-        <script>
-          const productos = [
-            ["Líquidos y Sales", 13500, "imagenes/OIP.jfif"],
-            ["Cartuchos Zomo", 10000, "imagenes/OIP.webp"],
-            ["Cartucho Novo2", 10000, "imagenes/OIP (1).webp"],
-            ["Resistencias Smok pen", 10000, "imagenes/R.png"],
-            ["Resistencias TPP", 12000, "imagenes/OIP (2).webp"],
-            ["Baterías", 13000, "imagenes/OIP (3).webp"],
-            ["Vidrios Smok pen", 9500, "imagenes/R.jfif"],
-            ["Phenom 6g Mushroom", 60000, "imagenes/8366f94078e769a90a46d5394bb0bc4e84d71470c30661871977dd9ffba80bc0211603.webp"],
-            ["Torch Cryo 7,5 g", 58000, "imagenes/OIP (4).webp"],
-            ["Torch Live Rozin 5g", 49000, "imagenes/OIP (5).webp"],
-            ["Nikbar Ice King (40.000 puff)", 27000, "imagenes/OIP (6).webp"],
-            ["Elfbar Nic King (40.000 puff)", 27000, "imagenes/OIP (7).webp"],
-            ["Zomo Party (4.500 puff)", 13000, "imagenes/OIP (8).webp"],
-            ["HQD (5.000 puff)", 14000, "imagenes/OIP (9).webp"],
-            ["Calibarn (6.000 puff)", 15000, "imagenes/OIP (10).webp"],
-            ["Pyne Pod (8.500 puff)", 17000, "imagenes/OIP (11).webp"],
-            ["Chris Brown (15.000 puff)", 19000, "imagenes/OIP (12).webp"],
-            ["Vozol Vista (20.000 puff)", 20000, "imagenes/OIP (13).webp"],
-            ["Ignite (25.000 puff)", 25000, "imagenes/OIP (14).webp"],
-            ["Ignite (40.000 puff)", 29000, "imagenes/OIP (15).webp"],
-            ["HDQ (25.000 puff)", 25000, "imagenes/OIP (16).webp"],
-            ["Lost Mary (20.000 puff)", 23000, "imagenes/lost-mary-disposable-vape-bar-5000-puff__70177.jpg"],
-            ["Black Sheep Duo (20.000 puff)", 30000, "imagenes/OIP (17).webp"],
-          ];
-
-          document.addEventListener("DOMContentLoaded", () => {
-            const contenedor = document.querySelector("#productos .row");
-            productos.forEach(([nombre, precio, imagen]) => {
-              const card = `
-                <div class="col-md-4 col-sm-6 producto-item">
-                  <div class="card shadow h-100 text-center">
-                    <img src="${imagen}" class="producto-img" alt="${nombre}">
-                    <div class="card-body">
-                      <h5 class="card-title">${nombre}</h5>
-                      <p class="precio">$${precio.toLocaleString()}</p>
-                      <button class="btn-negro w-100" onclick="agregarAlCarrito('${nombre}', ${precio})">
-                        <i class="bi bi-cart-plus"></i> Agregar al carrito
-                      </button>
+    <div class="container text-center mt-2 d-none" id="contenedor-ver-todos">
+        <button class="btn btn-dark" id="btn-ver-todos">Ver todos los productos</button>
+    </div>
+    <section id="contacto" class="section text-center">
+        <h2>Contáctanos</h2>
+        <div class="redes-contacto">
+            <a href="https://wa.me/5492914461862" target="_blank" class="btn-red whatsapp">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/va.bahia?igsh=MWVlbTZ1OXA1M3kzaQ==" target="_blank" class="btn-red instagram">
+                <i class="bi bi-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1FSGTnFay4/" target="_blank" class="btn-red facebook">
+                <i class="bi bi-facebook"></i> Facebook
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>VaBahia - Todos los derechos reservados</p>
+    </footer>
+    <div class="modal fade" id="modalCarritoBootstrap" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalCarritoLabel">
+                        <i class="bi bi-cart"></i> Tu Carrito
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="lista-carrito" class="list-group mb-3"></ul>
+                    <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-3">
+                        <span class="fw-bold fs-5">Total:</span>
+                        <span class="fw-bold fs-5 text-success">$<span id="total-carrito">0</span></span>
                     </div>
-                  </div>
-                </div>`;
-              contenedor.insertAdjacentHTML("beforeend", card);
-            });
-          });
-        </script>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mensaje búsqueda -->
-  <div id="mensaje-busqueda" class="container mt-4 text-center d-none">
-    <div class="alert alert-warning" role="alert">Producto no encontrado</div>
-  </div>
-
-  <!-- Botón ver todos -->
-  <div class="container text-center mt-2 d-none" id="contenedor-ver-todos">
-    <button class="btn btn-dark" id="btn-ver-todos">Ver todos los productos</button>
-  </div>
-
-  <section id="contacto" class="section text-center">
-    <h2>Contáctanos</h2>
-    <div class="redes-contacto">
-      <a
-        href="https://wa.me/5492914461862"
-        target="_blank"
-        class="btn-red whatsapp"
-      >
-        <i class="bi bi-whatsapp"></i> WhatsApp
-      </a>
-      <a
-        href="https://www.instagram.com/va.bahia?igsh=MWVlbTZ1OXA1M3kzaQ=="
-        target="_blank"
-        class="btn-red instagram"
-      >
-        <i class="bi bi-instagram"></i> Instagram
-      </a>
-      <a
-        href="https://www.facebook.com/share/1FSGTnFay4/"
-        target="_blank"
-        class="btn-red facebook"
-      >
-        <i class="bi bi-facebook"></i> Facebook
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <p>VaBahia - Todos los derechos reservados</p>
-  </footer>
-
-  <!-- Modal Carrito -->
-  <div
-    class="modal fade"
-    id="modalCarritoBootstrap"
-    tabindex="-1"
-    aria-labelledby="modalCarritoLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title fw-bold" id="modalCarritoLabel">
-            <i class="bi bi-cart"></i> Tu Carrito
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Cerrar"
-          ></button>
-        </div>
-
-        <div class="modal-body">
-          <ul id="lista-carrito" class="list-group mb-3"></ul>
-          <div
-            class="d-flex justify-content-between align-items-center border-top pt-3 mb-3"
-          >
-            <span class="fw-bold fs-5">Total:</span>
-            <span class="fw-bold fs-5 text-success"
-              >$<span id="total-carrito">0</span></span
-            >
-          </div>
-
-          <!-- Formulario cliente -->
-          <form id="form-datos">
-            <div class="mb-2">
-              <input
-                type="text"
-                id="nombre"
-                class="form-control"
-                placeholder="Nombre"
-                required
-              />
+                    <form id="form-datos">
+                        <div class="mb-2">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required />
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required />
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="direccion" class="form-control" placeholder="Dirección" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="finalizar-compra" class="btn btn-success">
+                        <i class="bi bi-whatsapp"></i> Finalizar compra
+                    </button>
+                </div>
             </div>
-            <div class="mb-2">
-              <input
-                type="text"
-                id="apellido"
-                class="form-control"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <div class="mb-2">
-              <input
-                type="text"
-                id="direccion"
-                class="form-control"
-                placeholder="Dirección"
-                required
-              />
-            </div>
-          </form>
         </div>
-
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Cerrar
-          </button>
-          <button type="button" id="finalizar-compra" class="btn btn-success">
-            <i class="bi bi-whatsapp"></i> Finalizar compra
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
