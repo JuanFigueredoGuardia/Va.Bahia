@@ -16,7 +16,7 @@ const productos = [
     ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
     ["black Sheep Duo (20.000 puff)", 29000, "imagenes/black Sheep Duo.jpg", "descartables"],
     ["Space Prism (20.000 puff)", 20000, "imagenes/Space Prism.jpg", "descartables"],
-    ["HDQ Tabaquil ( 25.000 puff)", 25000, "imagenes/HDQ Tabaquil.jpg", "descartables"],
+    ["HDQ Tabaquil (25.000 puff)", 25000, "imagenes/HDQ Tabaquil.jpg", "descartables"],
     ["Chris Brown (15.000 puff)", 19000, "imagenes/Chris Brown.jpg", "descartables"],
     ["Pone Pod (8.500 puff)", 17000, "imagenes/Pone Pod.jpg", "descartables"],
     ["Calibarn (6.000 puff)", 15000, "imagenes/Calibarn.jpg", "descartables"],
@@ -219,4 +219,5 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarProductos(categoria);
         });
     });
+
 });
