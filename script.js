@@ -219,6 +219,4 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarProductos(categoria);
         });
     });
-
 });
-
