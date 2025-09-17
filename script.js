@@ -6,42 +6,53 @@ let totalCarrito = document.getElementById('total-carrito');
 // Define las categorías de tus productos
 const productos = [
     // Descartables
-    ["Elfbar Ice King (40.000 puff)", 27000, "imagenes/Elfbar Ice King.jpg", "descartables"],
     ["Elfbar Nic King (40.000 puff)", 27000, "imagenes/Elfbar Nic King.jpg", "descartables"],
-    ["Nikbar ice baby (40.000 puff)", 27000, "imagenes/Nikbar ice baby.jpg", "descartables"],
-    ["Ignite Ice (40.000 puff)", 29000, "imagenes/Ignite Ice.jpg", "descartables"],
+    ["Nikbar Ice baby (40.000 puff)", 29000, "imagenes/Nikbar ice baby.jpg", "descartables"],
     ["Ignite (25.000 puff)", 25000, "imagenes/Ignite .jpg", "descartables"],
-    ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
-    ["Vozol Vista (20.000 puff)", 20000, "imagenes/Vozol Vista.jpg", "descartables"],
     ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
-    ["black Sheep Duo (20.000 puff)", 29000, "imagenes/black Sheep Duo.jpg", "descartables"],
     ["Space Prism (20.000 puff)", 20000, "imagenes/Space Prism.jpg", "descartables"],
-    ["HDQ Tabaquil (25.000 puff)", 25000, "imagenes/HDQ Tabaquil.jpg", "descartables"],
-    ["Chris Brown (15.000 puff)", 19000, "imagenes/Chris Brown.jpg", "descartables"],
-    ["Pone Pod (8.500 puff)", 17000, "imagenes/Pone Pod.jpg", "descartables"],
-    ["Calibarn (6.000 puff)", 15000, "imagenes/Calibarn.jpg", "descartables"],
     ["HDQ (5.000 puff)", 14000, "imagenes/HDQ.jpg", "descartables"],
     ["Zomo Party (4.500 puff)", 13000, "imagenes/Zomo Party.jpg", "descartables"],
+    ["Elfbar Ice Kings (40.000 Puff)", 29000, "imagenes/Elfbar Ice Kings.jpg", "descartables"],
+    ["Elfbar Nico king (40.000 puff)", 29000, "imagenes/Elfbar Nico king.jpg", "descartables"],
+    ["Ignite Ice (40.000 puff)", 30000, "imagenes/Ignite Ice1.jpg", "descartables"],
+     ["Black Sheep Dual ( 30.000 puff)", 35000, "imagenes/Black Sheep Dual.jpg", "descartables"],
+    ["Ignite gold ( 25.000 puff)", 27000, "imagenes/Ignite gold.jpg", "descartables"],
+    ["Frosty (25.000 puff)", 19500, "imagenes/Frosty.jpg", "descartables"],
+    ["Spaceman (20.000 puff)", 22000, "imagenes/Spaceman.jpg", "descartables"],
+    ["Vozol Vista (20.000 Puff)", 21000, "imagenes/Vozol Vista1.jpg", "descartables"],
+    ["Lost Maru (20.000 puff)", 26000, "imagenes/Lost Maru.jpg", "descartables"],
+    ["Black Sheep Duo (20.000 puff)", 29000, "imagenes/Black Sheep Duo1.jpg", "descartables"],
+    ["Chris Brown (15.000 puff)", 19000, "imagenes/Chris Brown1.jpg", "descartables"],
+    ["Pone Pod (8.500 puff)", 18000, "imagenes/Pone Pod1.jpg", "descartables"],
+    ["Dummy x finity (6.900 puff)", 15000, "imagenes/Dummy x finity.jpg", "descartables"],
+    ["Calibarn (6.000 puff)", 19000, "imagenes/Calibarn1.jpg", "descartables"],
+    ["HDQ al 2% (5.000 puff)", 16000, "imagenes/HDQ al 2.jpg", "descartables"],
+    ["Zomo Party al 2% (4.500 puff)", 15000, "imagenes/Zomo Party al 2.jpg", "descartables"],
     ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "descartables"],
     ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "descartables"],
     ["Phenom Mushroom 6gr", 60000, "imagenes/Phenom Mushroom 6gr.jpg", "descartables"],
+    
 
     // Equipos
-    ["Pod recargable zomo play", 18000, "imagenes/Pod recargable zomo play.jpg", "equipos"],
+    ["Pod recargable zomo play", 19000, "imagenes/Pod recargable zomo play.jpg", "equipos"],
     ["Pod recargable Smok - Novo 2s", 25000, "imagenes/Pod recargable Smok - Novo 2s.jpg", "equipos"],
     ["Kit de inicio Smok Vape Pen V2 kit", 27000, "imagenes/Kit de inicio Smok Vape Pen V2 kit.jpg", "equipos"],
-    ["Vapeador Voopoo Drag x pro kit", 66000, "imagenes/Vapeador Voopoo Drag x pro kit.jpg", "equipos"],
+    ["Vapeador Voopoo Drag x pro kit", 68000, "imagenes/Vapeador Voopoo Drag x pro kit.jpg", "equipos"],
 
     // Líquidos
     ["Líquidos Punisher 60ml", 13500, "imagenes/Líquidos Punisher 60ml.jpg", "liquidos"],
     ["Sales Punisher 30ml", 13500, "imagenes/Sales Punisher 30ml.jpg", "liquidos"],
 
     // Accesorios
-    ["Cartuchos Zomo", 10000, "imagenes/Cartuchos Zomo.jpg", "accesorios"],
-    ["Cartucho Novo2", 10000, "imagenes/Cartucho Novo2.jpg", "accesorios"],
-    ["Resistencia TPP", 12000, "imagenes/Resistencia TPP.jpg", "accesorios"],
-    ["Bateria LG - 18650", 13000, "imagenes/Bateria LG - 18650.jpg", "accesorios"],
-    ["Vidrios Smok Pen", 9500, "imagenes/Vidrios Smok Pen.jpg", "accesorios"],
+    ["Cartuchos Zomo", 11000, "imagenes/Cartuchos Zomo.jpg", "accesorios"],
+    ["Cartucho Novo2", 11000, "imagenes/Cartucho Novo2.jpg", "accesorios"],
+    ["Resistencia TPP", 13000, "imagenes/Resistencia TPP.jpg", "accesorios"],
+    ["Bateria LG - 18650", 14000, "imagenes/Bateria LG - 18650.jpg", "accesorios"],
+    ["Vidrios Smok Pen", 11000, "imagenes/Vidrios Smok Pen.jpg", "accesorios"],
+    ["Bateria 21700", 18000, "imagenes/Bateria 21700.jpg", "accesorios"],
+    ["Algodon Cotton Bacon 10gr", 8500, "imagenes/Algodon Cotton Bacon 10gr.jpg", "accesorios"],
+    ["Cargador Slim K2",  26.000, "imagenes/Cargador Slim K2.jpg", "accesorios"],
 ];
 
 // Abrir modal del carrito
