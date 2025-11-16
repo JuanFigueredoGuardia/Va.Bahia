@@ -13,6 +13,7 @@ const productos = [
     ["Ignite (25.000 puff)", 27000, "imagenes/Ignite .jpg", "descartables"],
     ["Spaceman nebula plus (25.000 puff)", 23000, "imagenes/Spaceman nebula plus.jpg", "descartables"],
     ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
+    ["Spaceman nebula plus (25.000 puff)", 23000, "imagenes/Spaceman nebula plus.jpg", "descartables"],
     ["Vozol Vista (20.000 puff)", 20000, "imagenes/Vozol Vista.jpg", "descartables"],
     ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
     ["black Sheep Duo (20.000 puff)", 26000, "imagenes/black Sheep Duo.jpg", "descartables"],
@@ -23,7 +24,6 @@ const productos = [
     ["Torch Cryo 7,5 gr", 58000, "imagenes/Torch Cryo 7,5 gr.jpg", "descartables"],
     ["Torch love Rozón 5 gr", 49000, "imagenes/Torch love Rozón 5 gr.jpg", "descartables"],
     ["Phenom Mushroom 6gr", 60000, "imagenes/Phenom Mushroom 6gr.jpg", "descartables"],
-    ["Spaceman nebula plus (25.000 puff)", 23000, "imagenes/Spaceman nebula plus.jpg", "descartables"],
 
     // Equipos
     ["Pod recargable zomo play", 18000, "imagenes/Pod recargable zomo play.jpg", "equipos"],
