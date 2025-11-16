@@ -6,9 +6,9 @@ let totalCarrito = document.getElementById('total-carrito');
 // Define las categorías de tus productos
 const productos = [
     // Descartables
-    ["Elfbar Ice King (40.000 puff)", 27000, "imagenes/Elfbar Ice King.jpg", "descartables"],
-    ["Elfbar Nic King (40.000 puff)", 27000, "imagenes/Elfbar Nic King.jpg", "descartables"],
-    ["Nikbar ice baby (40.000 puff)", 27000, "imagenes/Nikbar ice baby.jpg", "descartables"],
+    ["Elfbar Ice King (40.000 puff)", 29000, "imagenes/Elfbar Ice King.jpg", "descartables"],
+    ["Elfbar Nic King (40.000 puff)", 29000, "imagenes/Elfbar Nic King.jpg", "descartables"],
+    ["Nikbar ice baby (40.000 puff)", 29000, "imagenes/Nikbar ice baby.jpg", "descartables"],
     ["Ignite Ice (40.000 puff)", 29000, "imagenes/Ignite Ice.jpg", "descartables"],
     ["Ignite (25.000 puff)", 25000, "imagenes/Ignite .jpg", "descartables"],
     ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
