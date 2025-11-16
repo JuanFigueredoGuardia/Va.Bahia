@@ -11,6 +11,7 @@ const productos = [
     ["Nikbar ice baby (40.000 puff)", 29000, "imagenes/Nikbar ice baby.jpg", "descartables"],
     ["Ignite Ice (40.000 puff)", 29000, "imagenes/Ignite Ice.jpg", "descartables"],
     ["Ignite (25.000 puff)", 27000, "imagenes/Ignite .jpg", "descartables"],
+    ["Spaceman nebula plus (25.000 puff)", 23000, "imagenes/Spaceman nebula plus.jpg", "descartables"],
     ["Frosty (25.000 puff)", 19000, "imagenes/Frosty.jpg", "descartables"],
     ["Vozol Vista (20.000 puff)", 20000, "imagenes/Vozol Vista.jpg", "descartables"],
     ["Lost Mary (20.000 puff)", 23000, "imagenes/Lost Mary.jpg", "descartables"],
